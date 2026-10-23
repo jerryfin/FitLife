@@ -2,25 +2,57 @@
 
 
 # 1. Знакомство
-# TODO: Спроси у пользователя имя и сохрани в переменную user_name
-# TODO: Спроси возраст и сохрани в переменную user_age (не забудь преобразовать в число)
+user_name = input('Пожалуйста введите ваше имя: ')
 
+# Запись возраста в переменную user_age
+while True:
+    try:
+        user_age = int(input('Введите ваш возраст: '))
+        if user_age < 0:
+            print('Вы ввели отрицательный возраст')
+            continue
+        break
+    except ValueError:
+        print('Вы ввели некорректный возраст')
 
 # 2. Сбор данных
-# TODO: Запроси вес (в кг) и сохрани в user_weight (тип float)
-# TODO: Запроси рост (в метрах, например 1.75) и сохрани в user_height (тип float)
+# Запись веса в переменную user_weight
+while True:
+    try:
+        user_weight = float(input('Укажите ваш вес: '))
+        if user_weight < 0:
+            print('Вы ввели отрицательный вес')
+            continue
+        break
+    except ValueError:
+        print('Вы ввели некорректный вес')
+
+# Запись роста в переменную user_height
+while True:
+    try:
+        user_height = float(input('Ваш рост в метрах (например, 1.75): '))
+        if user_height < 0:
+            print('Вы ввели отрицательное значение')
+            continue
+        elif user_height > 2.5:
+            print('Пожалуйста укажите рост в метрах')
+            continue
+        break
+    except ValueError:
+        print('Вы ввели некорректный рост')
 
 
-# 3. Логика расчетов (Функции как "черный ящик": используем арифметику)
-# Формула ИМТ: вес разделить на (рост в квадрате)
-# TODO: Рассчитай bmi (Индекс массы тела)
+# Расчет индекса массы тела
+bmi = round(user_weight / (user_height ** 2), 1)
 
+# Расчет рекомендуемого количества воды в день
+WATER_PER_KG = 30
+water_needed = (user_weight * WATER_PER_KG / 1000)
 
-# Подсчет воды: вес * 30 мл
-# TODO: Рассчитай water_needed
-
-
-# 4. Вывод красивого результата
-# TODO: Используй f-строку, чтобы вывести приветствие, например: "Привет, Иван!"
-# TODO: Выведи возраст, ИМТ (округленный до 1 знака) и норму воды.
+# 4. Вывод
+print()
+print(f'Привет, {user_name.title()}!')
+print(f'Возраст: {user_age}')
+print(f'ИМТ: {bmi}')
+print(f"Рекомендуемая норма воды: {water_needed:.1f} л. в день")
 print("Расчет окончен. Будьте здоровы!")

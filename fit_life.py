@@ -2,7 +2,7 @@
 
 
 # 1. Знакомство
-user_name = input('Пожалуйста введите ваше имя: ')
+user_name = input('Пожалуйста введите ваше имя: ').title()
 
 # Запись возраста в переменную user_age
 while True:
@@ -51,7 +51,7 @@ water_needed = (user_weight * WATER_PER_KG / 1000)
 
 # 4. Вывод
 print()
-print(f'Привет, {user_name.title()}!')
+print(f'Привет, {user_name}!')
 print(f'Возраст: {user_age}')
 print(f'ИМТ: {bmi}')
 print(f"Рекомендуемая норма воды: {water_needed:.1f} л. в день")

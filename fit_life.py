@@ -8,8 +8,8 @@ user_name = input('Пожалуйста введите ваше имя: ').title
 while True:
     try:
         user_age = int(input('Введите ваш возраст: '))
-        if user_age < 0:
-            print('Вы ввели отрицательный возраст')
+        if user_age <= 0:
+            print('Рост должен быть больше нуля')
             continue
         break
     except ValueError:
@@ -20,8 +20,8 @@ while True:
 while True:
     try:
         user_weight = float(input('Укажите ваш вес: '))
-        if user_weight < 0:
-            print('Вы ввели отрицательный вес')
+        if user_weight <= 0:
+            print('Вес должен быть больше нуля')
             continue
         break
     except ValueError:

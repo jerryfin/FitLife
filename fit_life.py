@@ -9,7 +9,7 @@ while True:
     try:
         user_age = int(input('Введите ваш возраст: '))
         if user_age <= 0:
-            print('Рост должен быть больше нуля')
+            print('Возраст должен быть больше нуля')
             continue
         break
     except ValueError:
@@ -31,8 +31,8 @@ while True:
 while True:
     try:
         user_height = float(input('Ваш рост в метрах (например, 1.75): '))
-        if user_height < 0:
-            print('Вы ввели отрицательное значение')
+        if user_height <= 0:
+            print('Рост должен быть больше нуля')
             continue
         elif user_height > 2.5:
             print('Пожалуйста укажите рост в метрах')

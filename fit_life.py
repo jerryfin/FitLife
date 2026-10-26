@@ -19,7 +19,7 @@ while True:
 # Запись веса в переменную user_weight
 while True:
     try:
-        user_weight = float(input('Укажите ваш вес: '))
+        user_weight = float(input('Укажите ваш вес в кг. (например, 65): '))
         if user_weight <= 0:
             print('Вес должен быть больше нуля')
             continue
@@ -46,8 +46,9 @@ while True:
 bmi = round(user_weight / (user_height ** 2), 1)
 
 # Расчет рекомендуемого количества воды в день
-WATER_PER_KG = 30
-water_needed = (user_weight * WATER_PER_KG / 1000)
+WATER_PER_KG_ML = 30
+ML_PER_LITER = 1000
+water_needed = (user_weight * WATER_PER_KG_ML / ML_PER_LITER)
 
 # 4. Вывод
 print()
